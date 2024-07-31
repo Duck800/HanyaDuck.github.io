@@ -1,0 +1,764 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr">
+  <head>
+	<meta name="generator" content="Hugo 0.130.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+
+<title>My New Hugo Site</title>
+
+<link rel="stylesheet" href="/css/tailwind.css" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;600&display=swap"
+  rel="stylesheet" />
+
+<meta property="og:title" content="Homepage | hugo-porto theme" />
+
+<meta property="og:locale" content="en_US" />
+
+<meta property="og:url" content="//" />
+
+<meta
+  name="description"
+  content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+
+<meta name="theme-color" content="#5540af" />
+
+<meta property="og:site_name" content="hugo-porto theme" />
+
+<meta property="og:image" content="//assets/img/social.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta name="twitter:site" content="@tailwindmade" />
+
+
+
+
+
+
+  
+
+
+
+<link rel="icon" href="/img/default-favicon_hu9590cc05512e6d90a52920fd1fdf3ada_19893_32x0_resize_box_3.png" />
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+
+
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+
+
+
+
+
+  
+
+
+
+  </head>
+  <body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
+    <div id="main" class="relative max-w-screen-xl mx-auto px-5">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<div class="flex items-center justify-between py-5">
+  <div class="flex items-center">
+    <a href="/">
+      <img src="/img/default-logo.svg" class="py-5 w-10 lg:w-14 min-w-10" alt="#hugo-porto" title="#hugo-porto" />
+    </a>
+    <a href="/">
+      <h1 class="text-lg lg:text-xl px-2 lg:px-3 font-medium">#hugo-porto</h1>
+    </a>
+  </div>
+  <div class="hidden lg:block">
+    <ul class="flex items-center">
+      
+        <li class="px-5">
+          <a
+            href="/"
+            alt="Navigate to home page"
+            title="Navigate to home page"
+            target="_self"
+            class="cursor-pointer font-normal text-base">
+            Home
+          </a>
+        </li>
+      
+        <li class="px-5">
+          <a
+            href="/posts"
+            alt="Navigate to posts section"
+            title="Navigate to posts section"
+            target="_self"
+            class="cursor-pointer font-normal text-base">
+            Posts
+          </a>
+        </li>
+      
+        <li class="px-5">
+          <a
+            href="/tags"
+            alt="Navigate to tags section"
+            title="Navigate to tags section"
+            target="_self"
+            class="cursor-pointer font-normal text-base">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="px-5">
+          <a href="/files/cv.pdf" target="_blank">
+            <button
+              class="px-10 py-4 bg-white hover:bg-gray-600 hover:text-white rounded-lg font-normal text-base transition duration-300">
+              Download CV
+            </button>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="block lg:hidden mt-2">
+    <button @click="mobileMenu = true">
+      <i class="bx bx-menu text-3xl"></i>
+    </button>
+  </div>
+</div>
+
+<div
+  class="pointer-events-none fixed inset-0 min-h-screen bg-black bg-opacity-75 opacity-0 lg:hidden"
+  :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
+  <div class="absolute right-0 min-h-screen bg-gray-200 py-5 px-10 w-2/3 sm:w-1/3">
+    <button class="absolute top-0 right-0 mt-9 mr-4" @click="mobileMenu = false">
+      <i class="bx bx-x text-4xl"></i>
+    </button>
+    <ul class="mt-12 flex flex-col">
+      
+        <li class="py-2">
+          <a
+            href="/"
+            alt="Navigate to home page"
+            title="Navigate to home page"
+            target="_self"
+            class="cursor-pointer font-normal">
+            Home
+          </a>
+        </li>
+      
+        <li class="py-2">
+          <a
+            href="/posts"
+            alt="Navigate to posts section"
+            title="Navigate to posts section"
+            target="_self"
+            class="cursor-pointer font-normal">
+            Posts
+          </a>
+        </li>
+      
+        <li class="py-2">
+          <a
+            href="/tags"
+            alt="Navigate to tags section"
+            title="Navigate to tags section"
+            target="_self"
+            class="cursor-pointer font-normal">
+            Tags
+          </a>
+        </li>
+      
+      <li class="py-2">
+        <a href="/files/Andrew Molyuk.pdf" target="_blank" class="cursor-pointer font-normal">Get my CV</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      <main>
+        
+  
+  
+
+  
+  
+
+  
+    
+      <section id="hero">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="w-full flex items-center justify-center">
+  <div class="w-full">
+    <div class="md:flex lg:space-x-5 xl:space-x-10 items-center py-2">
+      <div
+        class="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl text-center md:text-left text-gray-400 font-poppins font-semibold pb-5 md:pb-0">
+        MANAGER
+      </div>
+      <div class="text-lg xl:text-xl text-center font-light p-2 md:p-10">
+        I&#39;m John Doe and after 25&#43; years in the tech field, I excel as an accomplished R&amp;D manager, adept at spearheading large-scale projects.
+      </div>
+    </div>
+    <div class="md:flex items-center justify-center py-2 space-x-5 xl:space-x-10">
+      <div class="items-center justify-center flex p-5 md:p-0">
+        <img
+          class="w-28 xl:w-36 rounded-full"
+          src="/img/default-avatar_huf9dbdc9a207cc2cd331cf2a34e5a6611_89794_150x150_resize_box_3.png"
+          alt="John Doe"
+          title="John Doe" />
+      </div>
+      <div
+        class="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl text-gray-100 font-outline-2 lg:font-outline-3 text-center md:text-right font-poppins font-semibold py-5 md:py-0">
+        ARCHITECT
+      </div>
+    </div>
+    <div class="md:flex lg:space-x-5 xl:space-x-10 items-center py-2">
+      <div class="text-lg xl:text-xl text-center font-light p-2 md:p-10">
+        I addicted to and thrive on hands-on work. Every detail on this website, meticulously crafted by my own hands, reflects my commitment to perfection.
+      </div>
+      <div
+        class="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl text-gray-600 text-center md:text-right font-poppins font-semibold py-5 md:py-0">
+        ENGINEER
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-lg xl:text-xl text-center font-light p-2 md:p-10">
+  I am a software engineer and manager with a passion for building and leading high-performing teams. I have a strong background in software development, architecture, and project management. I am a results-driven leader with a proven track record of delivering high-quality software solutions on time and within budget.
+</div>
+
+      </section>
+    
+  
+    
+      <section id="skills">
+        
+
+
+
+
+
+
+
+<h2 class="text-4xl md:text-5xl lg:text-7xl p-5 text-center font-medium font-poppins text-gray-400">
+  Don&#39;t measure your skills in percentages
+</h2>
+<div class="-mx-5 flex flex-wrap text-gray-600 text-center">
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <i class="bx bx-code text-5xl mx-auto pb-5"></i>
+        <div>
+          <h3 class="mb-4 text-lg font-medium sm:text-xl lg:text-lg xl:text-xl">Programming Languages</h3>
+          <p class="text-lg font-light">
+            Experienced in programming languages such as Python, JavaScript, Java, and C&#43;&#43;. Proficient in object-oriented programming, functional programming, and scripting. Well-versed in data structures, algorithms, and design patterns.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <i class="bx bx-code-alt text-5xl mx-auto pb-5"></i>
+        <div>
+          <h3 class="mb-4 text-lg font-medium sm:text-xl lg:text-lg xl:text-xl">Web Development</h3>
+          <p class="text-lg font-light">
+            Experienced in web development technologies such as HTML, CSS, and JavaScript. Proficient in front-end frameworks such as React, Angular, and Vue.js. Well-versed in responsive design, cross-browser compatibility, and web performance optimization.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <i class="bx bx-server text-5xl mx-auto pb-5"></i>
+        <div>
+          <h3 class="mb-4 text-lg font-medium sm:text-xl lg:text-lg xl:text-xl">Backend Development</h3>
+          <p class="text-lg font-light">
+            Experienced in backend development technologies such as Node.js, Express, and Django. Proficient in RESTful APIs, GraphQL, and microservices architecture. Well-versed in database management using SQL and NoSQL databases.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <i class="bx bx-git-branch text-5xl mx-auto pb-5"></i>
+        <div>
+          <h3 class="mb-4 text-lg font-medium sm:text-xl lg:text-lg xl:text-xl">CI/CD Pipelines</h3>
+          <p class="text-lg font-light">
+            Experienced in setting up CI/CD pipelines using Jenkins, GitHub Actions, and GitLab CI/CD. Proficient in automating build, test, and deployment processes. Well-versed in version control using Git and GitHub.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <i class="bx bxl-trello text-5xl mx-auto pb-5"></i>
+        <div>
+          <h3 class="mb-4 text-lg font-medium sm:text-xl lg:text-lg xl:text-xl">Agile Methodologies</h3>
+          <p class="text-lg font-light">
+            Experienced in working with Agile methodologies such as Scrum and Kanban. Proficient in conducting sprint planning, daily standups, sprint reviews, and retrospectives. Well-versed in using Jira, Trello, and other tools.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <i class="bx bxl-dev-to text-5xl mx-auto pb-5"></i>
+        <div>
+          <h3 class="mb-4 text-lg font-medium sm:text-xl lg:text-lg xl:text-xl">DevOps Practices</h3>
+          <p class="text-lg font-light">
+            Experienced in implementing DevOps practices such as infrastructure as code, configuration management, and monitoring. Proficient in using tools such as Terraform, Ansible, and Prometheus. Well-versed in logging, monitoring, and alerting.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+      </section>
+    
+  
+    
+      <section id="experience">
+        
+
+
+
+
+
+
+
+<h2 class="text-4xl md:text-5xl lg:text-7xl  text-center font-medium font-poppins text-gray-400">
+  Professional milestones
+</h2>
+<div class="relative mx-auto mt-12 flex w-full flex-col text-center text-gray-600">
+  <span class="left-1/4 absolute inset-y-0 ml-10 hidden w-0.5 bg-gray-300 md:block"></span>
+  
+    <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+      <div class="md:w-1/4">
+        <div class="justify-center md:justify-start font-light text-3xl">
+          GlobalWidgets
+        </div>
+      </div>
+      <div class="md:w-3/4">
+        <div class="relative flex md:pl-16">
+          <span
+            class="absolute left-7 top-1 hidden h-6 w-6 rounded-full border-2 border-gray-300 bg-white md:block"></span>
+
+          <div class="mt-1 flex">
+            <div class="md:-mt-1 md:pl-16">
+              <span class="block font-semibold">2019 - Present</span>
+              <span class="block pt-2 font-header text-xl font-semibold">Team Leader</span>
+              <span class="block pt-2 text-xl font-light">
+                
+                  <p class="py-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                
+                  <p class="py-2">Consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+      <div class="md:w-1/4">
+        <div class="justify-center md:justify-start font-light text-3xl">
+          TechNova Solutions
+        </div>
+      </div>
+      <div class="md:w-3/4">
+        <div class="relative flex md:pl-16">
+          <span
+            class="absolute left-7 top-1 hidden h-6 w-6 rounded-full border-2 border-gray-300 bg-white md:block"></span>
+
+          <div class="mt-1 flex">
+            <div class="md:-mt-1 md:pl-16">
+              <span class="block font-semibold">2017 - 2019</span>
+              <span class="block pt-2 font-header text-xl font-semibold">CTO</span>
+              <span class="block pt-2 text-xl font-light">
+                
+                  <p class="py-2">Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+      <div class="md:w-1/4">
+        <div class="justify-center md:justify-start font-light text-3xl">
+          BrightMind Inc.
+        </div>
+      </div>
+      <div class="md:w-3/4">
+        <div class="relative flex md:pl-16">
+          <span
+            class="absolute left-7 top-1 hidden h-6 w-6 rounded-full border-2 border-gray-300 bg-white md:block"></span>
+
+          <div class="mt-1 flex">
+            <div class="md:-mt-1 md:pl-16">
+              <span class="block font-semibold">2015 - 2017</span>
+              <span class="block pt-2 font-header text-xl font-semibold">Software Engineer</span>
+              <span class="block pt-2 text-xl font-light">
+                
+                  <p class="py-2">Consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+      </section>
+    
+  
+    
+      <section id="education">
+        
+
+
+
+
+
+
+
+<h2 class="text-center p-5 text-4xl md:text-5xl lg:text-7xl font-medium font-poppins text-gray-400">
+  Educational journey
+</h2>
+<div class="-mx-5 flex flex-wrap text-gray-600">
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <div>
+          <h3 class="mb-4 text-lg font-medium sm:text-xl lg:text-lg xl:text-xl">University</h3>
+          <h4 class="mb-4 text-xl font-light">2015 - 2020</h4>
+          <p class="text-lg font-light">
+            Graduated with a Bachelor&#39;s degree in Computer Science. Specialized in software engineering, web development, and data science. Completed a thesis on machine learning algorithms for image recognition.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <div>
+          <h3 class="mb-4 text-lg font-medium sm:text-xl lg:text-lg xl:text-xl">High School</h3>
+          <h4 class="mb-4 text-xl font-light">2005 - 2015</h4>
+          <p class="text-lg font-light">
+            Experienced in web development technologies such as HTML, CSS, and JavaScript. Proficient in front-end frameworks such as React, Angular, and Vue.js. Well-versed in responsive design, cross-browser compatibility, and web performance optimization.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <div>
+          <h3 class="mb-4 text-lg font-medium sm:text-xl lg:text-lg xl:text-xl">Kindergarten</h3>
+          <h4 class="mb-4 text-xl font-light">2000 - 2005</h4>
+          <p class="text-lg font-light">
+            Experienced in backend development technologies such as Node.js, Express, and Django. Proficient in RESTful APIs, GraphQL, and microservices architecture. Well-versed in database management using SQL and NoSQL databases.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+      </section>
+    
+  
+    
+      <section id="projects">
+        
+
+
+
+
+
+
+
+<h2 class="text-center text-4xl md:text-5xl lg:text-7xl p-5 font-medium font-poppins text-gray-400">
+  Backing of Open Source
+</h2>
+
+  <div class="mb-9 px-7 p-5 sm:p-9 lg:px-6 xl:px-9 border-b-2 border-gray-300 last:border-b-0 text-gray-600">
+    <div>
+      <h3 class="mb-4 font-light text-3xl">React.js</h3>
+      
+        <p class="md:pl-10 py-2 text-xl font-light">
+          React is a JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.
+        </p>
+      
+        <p class="md:pl-10 py-2 text-xl font-light">
+          React allows developers to create large web applications that can change data, without reloading the page. The main purpose of React is to be fast, scalable, and simple.
+        </p>
+      
+        <p class="md:pl-10 py-2 text-xl font-light">
+          React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called components.
+        </p>
+      
+    </div>
+    <div class="mt-5">
+      <a href="https://reactjs.org/" target="_blank" class="text-blue-500 hover:underline">https://reactjs.org/</a>
+    </div>
+  </div>
+
+  <div class="mb-9 px-7 p-5 sm:p-9 lg:px-6 xl:px-9 border-b-2 border-gray-300 last:border-b-0 text-gray-600">
+    <div>
+      <h3 class="mb-4 font-light text-3xl">Vue.js</h3>
+      
+        <p class="md:pl-10 py-2 text-xl font-light">
+          Vue.js is an open-source model–view–viewmodel front-end JavaScript framework for building user interfaces and single-page applications. It was created by Evan You and is maintained by him and the rest of the active core team members.
+        </p>
+      
+        <p class="md:pl-10 py-2 text-xl font-light">
+          Vue.js is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only and is easy to pick up and integrate with other libraries or existing projects.
+        </p>
+      
+        <p class="md:pl-10 py-2 text-xl font-light">
+          Vue.js is a progressive framework for building user interfaces. The core library is focused on the view layer only and is easy to pick up and integrate with other libraries or existing projects.
+        </p>
+      
+    </div>
+    <div class="mt-5">
+      <a href="https://vuejs.org/" target="_blank" class="text-blue-500 hover:underline">https://vuejs.org/</a>
+    </div>
+  </div>
+
+  <div class="mb-9 px-7 p-5 sm:p-9 lg:px-6 xl:px-9 border-b-2 border-gray-300 last:border-b-0 text-gray-600">
+    <div>
+      <h3 class="mb-4 font-light text-3xl">Angular</h3>
+      
+        <p class="md:pl-10 py-2 text-xl font-light">
+          Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your apps.
+        </p>
+      
+        <p class="md:pl-10 py-2 text-xl font-light">
+          Consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your apps.
+        </p>
+      
+        <p class="md:pl-10 py-2 text-xl font-light">
+          Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your apps.
+        </p>
+      
+    </div>
+    <div class="mt-5">
+      <a href="https://angular.io/" target="_blank" class="text-blue-500 hover:underline">https://angular.io/</a>
+    </div>
+  </div>
+
+
+      </section>
+    
+  
+    
+      <section id="testimonials">
+        
+
+
+
+
+
+
+
+<h2 class="text-center pb-5 text-4xl md:text-5xl lg:text-7xl font-medium font-poppins text-gray-400">
+  What people say
+</h2>
+<div class="-mx-5 flex flex-wrap py-5 text-gray-600">
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <div>
+          <p class="text-lg font-light">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.
+          </p>
+          <div class="text-md mt-5 font-medium text-right">John Doe</div>
+          <div class="text-base text-gray-400 font-light text-right">CEO at IBM</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <div>
+          <p class="text-lg font-light">
+            Consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.
+          </p>
+          <div class="text-md mt-5 font-medium text-right">Jane Doe</div>
+          <div class="text-base text-gray-400 font-light text-right">CTO at Facebook</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <div>
+          <p class="text-lg font-light">
+            Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <div class="text-md mt-5 font-medium text-right">John Smith</div>
+          <div class="text-base text-gray-400 font-light text-right">Developer at Microsoft</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <div>
+          <p class="text-lg font-light">
+            Consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <div class="text-md mt-5 font-medium text-right">Jane Smith</div>
+          <div class="text-base text-gray-400 font-light text-right">Designer at Google</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <div>
+          <p class="text-lg font-light">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.
+          </p>
+          <div class="text-md mt-5 font-medium text-right">John Doe</div>
+          <div class="text-base text-gray-400 font-light text-right">CEO at Google</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 lg:w-1/3 px-5">
+      <div class="mb-9 rounded-xl p-7 sm:p-9 lg:px-6 xl:px-9 bg-gray-50">
+        <div>
+          <p class="text-lg font-light">
+            Consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.
+          </p>
+          <div class="text-md mt-5 font-medium text-right">Jane Doe</div>
+          <div class="text-base text-gray-400 font-light text-right">CTO at Apple</div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+      </section>
+    
+  
+
+      </main>
+      <footer>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=" text-center">
+  <div class="flex flex-wrap items-center justify-center">
+    
+      
+      
+        <a href="https://www.linkedin.com/in/johndoe/" target="_blank" class="p-5"><i class="bx bxl-linkedin text-3xl"></i></a>
+      
+    
+      
+      
+        <a href="https://github.com/johndoe/" target="_blank" class="p-5"><i class="bx bxl-github text-3xl"></i></a>
+      
+    
+      
+      
+        <a href="https://www.facebook.com/johndoe/" target="_blank" class="p-5"><i class="bx bxl-facebook text-3xl"></i></a>
+      
+    
+      
+      
+        <a href="https://twitter.com/johndoe/" target="_blank" class="p-5"><i class="bx bxl-twitter text-3xl"></i></a>
+      
+    
+      
+      
+        <a href="https://t.me/johndoe/" target="_blank" class="p-5"><i class="bx bxl-telegram text-3xl"></i></a>
+      
+    
+  </div>
+</div>
+
+
+
+<div class="pb-5 text-center text-lg font-light">
+  <div title="hugo-porto v0.1.7">
+    © 2024 John Doe
+  </div>
+</div>
+
+      </footer>
+    </div>
+  </body>
+</html>
