@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Barlow-ExtraBlod';
+    src: url('./public/font/Barlow-ExtraBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Barlow-Black';
+    src: url('./public/font/Barlow-Black.ttf') format('truetype');
+    font-style: normal;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -58,12 +70,6 @@ body {
     margin-right: 10px;
 }
 
-@font-face {
-    font-family: 'Barlow-ExtraBlod';
-    src: url('./public/font/Barlow-ExtraBold.ttf') format('truetype');
-    font-style: normal;
-}
-
 .logo b {
     font-family: 'Barlow-ExtraBlod', sans-serif;
     font-size: 1.5rem;
@@ -85,6 +91,8 @@ body {
     overflow: hidden;
     color: #fff;
 }
+
+/* Home PAGE */
 
 .img-container {
     height: 100vh;
@@ -115,12 +123,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-}
-
-@font-face {
-    font-family: 'Barlow-Black';
-    src: url('./public/font/Barlow-Black.ttf') format('truetype');
-    font-style: normal;
 }
 
 .name {
@@ -169,3 +171,91 @@ body {
     font-size: 2rem;
     color: #fff;
 }
+
+/* About PAGE */
+.about-left {
+    width: 30%;
+    height: 80%;
+    border-radius: 10px;
+    margin: 20px;
+    align-self: flex-end;
+    align-items: flex-start;
+}
+
+.about-right {
+    width: 50%;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.honor-container {
+    background-color: #00A651;
+    border-radius: 50px;
+    height: 60%;
+    padding: 20px 30px 20px 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.honor-logo {
+    display: flex;
+    justify-content: left;
+}
+
+.honor-container img {
+    width: 20%;
+    height: auto;
+    margin: 10px;
+}
+
+.honor-container b {
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 10px;
+}
+
+.intern-container,
+.edu-container,
+.skill-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intern-text,
+.edu-text,
+.skill-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* 
+
+.honor-container {
+    background-color: #00A651;
+    border-radius: 50px;
+    height: 50vh;
+    max-width: 30vw;
+    flex: 1;
+    display: flex;
+    align-items: left;
+    padding:30px;
+}
+
+.edu-container {
+    background-color: #00A651;
+    border-radius: 50px;
+    height: 50vh;
+    max-width: 30vw;
+    flex: 1;
+    display: flex;
+    align-items: left;
+    padding:30px;
+} */
