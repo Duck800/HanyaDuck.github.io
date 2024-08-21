@@ -22,8 +22,8 @@ body {
 .header {
     position: fixed;
     width: 100vw;
-    height: 15vh;
-    background-color: transparent;
+    height: 10vh;
+    background-color: #2B2B2B;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -174,25 +174,26 @@ body {
 
 /* About PAGE */
 .about-left {
-    width: 30%;
+    width: 35%;
     height: 80%;
     border-radius: 10px;
-    margin: 20px;
-    align-self: flex-end;
+    margin-right: 20px;
+    padding-top:15vh;
     align-items: flex-start;
 }
 
 .about-right {
-    width: 50%;
+    width: 45%;
     border-radius: 10px;
-    margin: 20px;
+    margin-left: 20px;
 }
 
 .honor-container {
     background-color: #00A651;
     border-radius: 50px;
     height: 60%;
-    padding: 20px 30px 20px 30px;
+    width:85%;
+    padding: 20px 35px 20px 35px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -206,19 +207,37 @@ body {
 }
 
 .honor-container img {
-    width: 20%;
+    width: 15%;
     height: auto;
     margin: 10px;
 }
 
-.honor-container b {
+.honor-text {
     font-family: 'Barlow-Black', sans-serif;
     font-size: 2.5rem;
     color: #fff;
     margin: 10px;
 }
 
-.intern-container,
+.intern-container {
+    background-color: transparent;
+    border-color: transparent;
+    width:95%;
+    margin-top: 20px 0px 20px 0px;
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.intern-text {
+    color: #00A651;
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 2.5rem;
+    margin: 10px;
+}
+
 .edu-container,
 .skill-container {
     background-color: #fff;
@@ -228,7 +247,6 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.intern-text,
 .edu-text,
 .skill-text {
     font-size: 18px;
