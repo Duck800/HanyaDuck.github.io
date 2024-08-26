@@ -73,19 +73,35 @@
                 </div>
                 <div class="intern-container">
                     <b class="intern-text">INTERNSHIP</b>
-                    <intern-detail img-src="./public/img/SAP.png" img-alt="SAP Logo" 
-                        company-name="SAP(China), CSM Dept."
-                        time-place="Jan-Oct, 2024 Shanghai, China">
+                    <intern-detail img-src="./public/img/SAP.png" img-alt="SAP Logo"
+                        company-name="SAP(China), CSM Dept." time-place="Jan-Oct, 2024 Shanghai, China">
                 </div>
             </div>
 
             <div class="about-right">
-                <div class="edu-container">
-                    <b class="edu-text">EDUCATION</b>
+                <div class="upper-part">
+                    <div class="edu-container">
+                        <b class="edu-text">EDUCATION</b>
+                        <div class="edu-list">
+                            <edu-detail edu-level="Pre-university"
+                                edu-description="2009-2021 Nantong, Jiangsu, China"></edu-detail>
+                            <edu-detail edu-level="Bachelor: Tongji University"
+                                edu-description="2021-2025 Shanghai, China"></edu-detail>
+                        </div>
+                    </div>
+                    <button class="download">
+                        Download CV
+                    </button>
                 </div>
 
                 <div class="skill-container">
                     <b class="skill-text">SKILL</b>
+                    <div class="skill-display">
+                        <skill-detail skill-name="UI/UX"></skill-detail>
+                        <skill-detail skill-name="Front<br>End"></skill-detail>
+                        <skill-detail skill-name="Back<br>End"></skill-detail>
+                        <skill-detail skill-name="Data<br>Base"></skill-detail>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,6 +117,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.bootcdn.net/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="./script.js"></script>
     <script src="./component.js"></script>
 </body>

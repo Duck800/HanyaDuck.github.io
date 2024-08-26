@@ -1,71 +1,74 @@
-//  页面挂载后
-window.onload = () => {
-    // 加载cdn资源 https://cdn.bootcdn.net/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js
-    const script = document.createElement('script')
-    script.src = 'https://cdn.bootcdn.net/ajax/libs/gsap/3.12.2/gsap.min.js'
-    document.body.appendChild(script)
-    script.onload = () => {
-        // 加载完成后执行
-        // 滚动事件
-        (document.getElementById('page-container') || document.body).addEventListener('wheel', (e) => {
-            // 页面可视高度
-            const innerHeight = window.innerHeight
-            // 判断e.deltaY大于0 页面向下滑动 位置坐标向上走
-            // y轴移动距离 clamp(最小值, 最大值, 阈值在前两个值之间的值)
-            let translateY = gsap.utils.clamp(
-                -3 * window.innerHeight,
-                0,
-                +gsap.getProperty('.page', 'y') +
-                (-e.deltaY / Math.abs(e.deltaY)) * innerHeight,
-            )
-            // 更新页面位置
-            gsap.to('.page', {
-                y: translateY,
-                duration: 0.5,
-            })
-
-        })
-    }
-}
-
 // 获取所有页面元素
 const pages = document.querySelectorAll('.page');
 
-// 添加滚动事件监听
-window.addEventListener('scroll', () => {
-    let currentPage = 0;
-    let minDistance = Infinity;
+// 获取所有导航链接元素
+const navLinks = document.querySelectorAll('.header-nav a');
 
-    // 找到当前页面
-    pages.forEach((page, index) => {
-        const distance = Math.abs(page.getBoundingClientRect().top);
-        if (distance < minDistance) {
-            minDistance = distance;
-            currentPage = index;
-        }
-    });
+// 添加滚轮滑动事件监听
+let currentPage = 0;
+let isScrolling = false;
 
-    // 更新导航栏高亮
-    document.querySelectorAll('.header-nav a').forEach((link, index) => {
-        if (index === currentPage) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
+window.addEventListener('wheel', (event) => {
+  if (isScrolling) return;
+  isScrolling = true;
+
+  if (event.deltaY > 0) {
+    // 向下滚动
+    if (currentPage < pages.length - 1) {
+      currentPage++;
+      scrollToPage(currentPage);
+    }
+  } else {
+    // 向上滚动
+    if (currentPage > 0) {
+      currentPage--;
+      scrollToPage(currentPage);
+    }
+  }
+
+  setTimeout(() => {
+    isScrolling = false;
+  }, 1000);
 });
 
-// 添加导航栏链接点击事件
-document.querySelectorAll('.header-nav a').forEach((link) => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetPage = document.getElementById(e.target.getAttribute('href').slice(1));
-        targetPage.scrollIntoView({ behavior: 'smooth' });
+// 添加导航链接点击事件监听
+navLinks.forEach((link, index) => {
+  link.addEventListener('click', () => {
+    currentPage = index;
+    scrollToPage(currentPage);
+  });
+});
 
-        // 高亮当前链接
-        document.querySelectorAll('.header-nav a').forEach((a) => {
-            a.classList.remove('active');
-        });
-        e.target.classList.add('active');
-    });
+// 滚动到指定页面
+function scrollToPage(pageIndex) {
+  pages[pageIndex].scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+
+  // 更新导航栏高亮
+  navLinks.forEach((link, index) => {
+    if (index === pageIndex) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+// 获取下载按钮元素
+const downloadBtn = document.querySelector('.download');
+
+// 添加点击事件监听
+downloadBtn.addEventListener('click', () => {
+  // 创建一个临时链接
+  const tempLink = document.createElement('a');
+  tempLink.href = './Hanya CV.pdf'; // 替换为您的简历文件路径
+  tempLink.download = 'Hanya-CV(CN&EN).pdf'; // 设置下载文件名称
+  tempLink.setAttribute('target', '_blank'); // 在新标签页打开
+
+  // 点击触发下载
+  document.body.appendChild(tempLink);
+  tempLink.click();
+  document.body.removeChild(tempLink);
 });
