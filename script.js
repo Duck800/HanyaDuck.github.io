@@ -1,5 +1,6 @@
 // 获取所有页面元素
 const pages = document.querySelectorAll('.page');
+const circles = document.querySelectorAll('.circle:first-child');
 
 // 获取所有导航链接元素
 const navLinks = document.querySelectorAll('.header-nav a');
@@ -17,18 +18,20 @@ window.addEventListener('wheel', (event) => {
     if (currentPage < pages.length - 1) {
       currentPage++;
       scrollToPage(currentPage);
+      moveCircle(currentPage);
     }
   } else {
     // 向上滚动
     if (currentPage > 0) {
       currentPage--;
       scrollToPage(currentPage);
+      moveCircle(currentPage);
     }
   }
 
   setTimeout(() => {
     isScrolling = false;
-  }, 1000);
+  }, 500);
 });
 
 // 添加导航链接点击事件监听
@@ -36,6 +39,7 @@ navLinks.forEach((link, index) => {
   link.addEventListener('click', () => {
     currentPage = index;
     scrollToPage(currentPage);
+    moveCircle(currentPage);
   });
 });
 
@@ -52,6 +56,19 @@ function scrollToPage(pageIndex) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
+    }
+  });
+}
+
+// 移动第一个圆形
+function moveCircle(pageIndex) {
+  circles.forEach((circle, index) => {
+    if (index === 0) {
+      if (pageIndex === 0) {
+        circle.classList.remove('move');
+      } else {
+        circle.classList.add('move');
+      }
     }
   });
 }
