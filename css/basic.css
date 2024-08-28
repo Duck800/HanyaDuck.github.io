@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Barlow-ExtraBlod';
+    src: url('../public/font/Barlow-ExtraBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+.circle-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    overflow: hidden;
+    /* 限制溢出 */
+    z-index: -1;
+}
+
+.circle:first-child {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 30px solid #fff;
+    box-sizing: border-box;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    animation: move-y 3.5s linear infinite;
+    /* 设置动画时间3.5s */
+    transition: top 0.5s ease, left 0.5s ease;
+    /* 添加过渡效果 */
+}
+
+.circle:first-child.moveleft {
+    top: 15%;
+    left: 5%;
+}
+
+.circle:first-child.movedown {
+    top: 85%;
+    left: 5%;
+}
+
+.circle:last-child {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(136deg, #00A651 0%, #FFCD56 100%);
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    animation: move-y 5s linear infinite;
+    transition: all 0.5s ease 0s;
+}
+
+.circle:last-child.move {
+    bottom: 72%;
+    right: 5%;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(136deg, #FF8B43 0%, #86B54A 100%);
+}
+
+/* 设置动画参数实现动效循环 */
+@keyframes move-y {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-16px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bg-filter {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    /* 用 blur 参数来模拟毛玻璃效果 */
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: -1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2B2B2B;
+}
+
+/* 页头样式 */
+
+.header {
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    background-color: #2B2B2B;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    z-index: 100;
+}
+
+.header-nav {
+    background-color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 0px;
+}
+
+.header-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 0 20px 0 20px;
+    border-radius: 50px;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+    background-color: #00A651;
+    color: white;
+    border-radius: 50px;
+}
+
+.logo {
+    margin: 0 20px 0 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.logo b {
+    font-family: 'Barlow-ExtraBlod', sans-serif;
+    font-size: 1.5rem;
+}
+
+/* 页面内容样式 */
+.container {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+}

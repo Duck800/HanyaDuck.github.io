@@ -1,0 +1,12 @@
+.scene-container {
+    width: 100vw;
+    height: 35vh;
+    align-self: flex-end;
+}
+
+.scene-container img {
+    width: 100%;
+    /* 图片最大宽度 */
+    height: auto;
+    /* 自适应高度 */
+}

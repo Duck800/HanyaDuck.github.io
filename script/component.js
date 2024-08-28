@@ -159,7 +159,9 @@ class CustomSkill extends HTMLElement {
             align-items: flex-start;
             justify-content: flex-start;
             position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-detail.gradient {
+            background: linear-gradient(180deg, #F1FFB0 0%, #D6F0C6 80%);
         }
         .skill-name {
             color: #FFFFFF;
@@ -194,7 +196,7 @@ class CustomSkill extends HTMLElement {
             margin-bottom: 5px; /* 设置列表项之间的垂直间距为 10 像素 */
         }
         </style>
-        <div class="skill-detail">
+        <div class="skill-detail ${this.isExpanded ? 'gradient' : ''}">
           <b class="skill-name ${this.isExpanded ? 'blurred' : ''}">
             ${this.getAttribute('skill-name')}
           </b>
@@ -232,6 +234,7 @@ class CustomSkill extends HTMLElement {
     updateUI() {
         this.shadowRoot.querySelector('.skill-list').style.opacity = this.isExpanded ? '1' : '0';
         this.shadowRoot.querySelector('.skill-name').classList.toggle('blurred', this.isExpanded);
+        this.shadowRoot.querySelector('.skill-detail').classList.toggle('gradient', this.isExpanded);
     }
 }
 

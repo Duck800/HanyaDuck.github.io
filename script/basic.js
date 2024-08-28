@@ -1,7 +1,6 @@
 // 获取所有页面元素
 const pages = document.querySelectorAll('.page');
-const circles = document.querySelectorAll('.circle:first-child');
-
+const circles = document.querySelectorAll('.circle-box div');
 // 获取所有导航链接元素
 const navLinks = document.querySelectorAll('.header-nav a');
 
@@ -60,14 +59,27 @@ function scrollToPage(pageIndex) {
   });
 }
 
-// 移动第一个圆形
+// 移动圆形
 function moveCircle(pageIndex) {
   circles.forEach((circle, index) => {
     if (index === 0) {
       if (pageIndex === 0) {
-        circle.classList.remove('move');
-      } else {
+        circle.classList.remove('moveleft');
+        circle.classList.remove('movedown');
+      } else if(pageIndex === 2) {
+        circle.classList.remove('moveleft');
+        circle.classList.add('movedown');
+      }
+      else{
+        circle.classList.remove('movedown');
+        circle.classList.add('moveleft');
+      }
+    }
+    else if (index === 1) {
+      if (pageIndex === 2) {
         circle.classList.add('move');
+      } else {
+        circle.classList.remove('move');
       }
     }
   });
