@@ -1,12 +1,63 @@
-.scene-container {
-    width: 100vw;
-    height: 35vh;
-    align-self: flex-end;
+.photo-group {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 56%;
+    margin-bottom: 8%;
 }
 
-.scene-container img {
+.experience-left {
+    flex: 1;
+    margin: 0 9px;
+    width: 26%;
+    height: 100%;
+}
+
+.experience-mid {
+    flex: 1;
+    margin: 0 9px;
+    background-color: rgba(255, 232, 182, 0.6);
+    backdrop-filter: blur(5px);
+    width: 26%;
+    height: 100%;
+}
+
+.experience-right {
+    flex: 1;
+    margin: 0 9px;
+    background-color: rgba(201, 226, 255, 0.6);
+    backdrop-filter: blur(5px);
+    width: 26%;
+    height: 100%;
+}
+
+.left-up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 49%;
+}
+
+.green-box-up {
+    width: 48%;
+    height: 100%;
+    background-color: rgba(231, 255, 216, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    /* 图片最大宽度 */
-    height: auto;
-    /* 自适应高度 */
+    height: 49%;
+    margin-top: 3%;
+    background-color: rgba(231, 255, 216, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
 }

@@ -57,6 +57,13 @@ function scrollToPage(pageIndex) {
       link.classList.remove('active');
     }
   });
+
+  // 设置背景图类
+  if (pageIndex === 2) {
+    document.querySelector('#experience').classList.add('background-scene');
+  } else {
+    document.querySelector('#experience').classList.remove('background-scene');
+  }
 }
 
 // 移动圆形
@@ -66,11 +73,11 @@ function moveCircle(pageIndex) {
       if (pageIndex === 0) {
         circle.classList.remove('moveleft');
         circle.classList.remove('movedown');
-      } else if(pageIndex === 2) {
+      } else if (pageIndex === 2) {
         circle.classList.remove('moveleft');
         circle.classList.add('movedown');
       }
-      else{
+      else {
         circle.classList.remove('movedown');
         circle.classList.add('moveleft');
       }

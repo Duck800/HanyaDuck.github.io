@@ -96,7 +96,6 @@ body {
 }
 
 /* 页头样式 */
-
 .header {
     position: fixed;
     width: 100vw;
@@ -168,4 +167,14 @@ body {
     align-items: center;
     overflow: hidden;
     color: #fff;
+}
+
+.page.background-scene {
+    background-image: url('../public/img/SCENE.png');
+    background-size: 100% auto;
+    /* 宽度 100%，高度自动调整 */
+    background-position: bottom;
+    /* 背景从底部开始 */
+    background-repeat: no-repeat;
+    /* 不重复背景图 */
 }
