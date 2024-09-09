@@ -29,7 +29,7 @@
 }
 
 .text {
-    margin-top: 6rem;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,16 +43,13 @@
 }
 
 .major-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem 6rem 2rem 6rem;
-    margin: 15px 0px 15px 0px;
-    border: 5px solid white;
-    border-radius: 30px;
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 4rem;
+    color: #D6F0C6;
+    text-align: right;
 }
 
-.SE {
+/* .SE {
     font-family: 'Barlow-Black', sans-serif;
     font-size: 3rem;
     color: #D6F0C6;
@@ -74,8 +71,7 @@
     font-size: 2rem;
     color: #A6A6A6;
     margin-right: 50px;
-    /* 调整元素之间的间距 */
-}
+} */
 
 .email {
     font-family: 'Barlow-Black', sans-serif;

@@ -59,34 +59,60 @@ function scrollToPage(pageIndex) {
   });
 
   // 设置背景图类
-  if (pageIndex === 2) {
-    document.querySelector('#experience').classList.add('background-scene');
+  if (pageIndex === 3) {
+    document.querySelector('#contact').classList.add('background-scene');
   } else {
-    document.querySelector('#experience').classList.remove('background-scene');
+    document.querySelector('#contact').classList.remove('background-scene');
   }
 }
 
+// 创建一个新的 <style> 元素
+const styleSheet = document.createElement("style");
+document.head.appendChild(styleSheet);
+
+const radius = 250; // 圆半径
+
+let keyframes = '@keyframes orbit-moon {';
+
+for (let i = 0; i <= 100; i += 1) {
+  const angle = 90 + (i / 100) * 180; // 从 90° 到 270°
+  const x = radius * Math.cos((angle * Math.PI) / 180); // X 坐标
+  const y = radius * Math.sin((angle * Math.PI) / 180); // Y 坐标
+  keyframes += `${i}% { transform: translate(${x}px, ${-y}px) rotate(${angle}deg); }\n`; // y 值取反
+}
+
+keyframes += '}';
+
+// 将关键帧添加到新创建的样式表中
+styleSheet.innerHTML = keyframes;
+
 // 移动圆形
 function moveCircle(pageIndex) {
+  const circles = document.querySelectorAll('.circle');
+
   circles.forEach((circle, index) => {
-    if (index === 0) {
+    if (index === 0) { // 小圆
       if (pageIndex === 0) {
-        circle.classList.remove('moveleft');
-        circle.classList.remove('movedown');
-      } else if (pageIndex === 2) {
-        circle.classList.remove('moveleft');
+        circle.classList.remove('moveleft', 'movedown', 'moon');
+      } else if (pageIndex === 3) {
+        circle.classList.remove('moveleft', 'moon');
         circle.classList.add('movedown');
-      }
-      else {
-        circle.classList.remove('movedown');
+      } else if (pageIndex === 2) {
+        circle.classList.remove('moveleft', 'movedown');
+        circle.classList.add('moon'); // 添加月亮样式
+      } else {
+        circle.classList.remove('movedown', 'moon');
         circle.classList.add('moveleft');
       }
-    }
-    else if (index === 1) {
-      if (pageIndex === 2) {
+    } else if (index === 1) { // 大圆
+      if (pageIndex === 3) {
         circle.classList.add('move');
-      } else {
+        circle.classList.remove('earth');
+      } else if (pageIndex === 2) {
         circle.classList.remove('move');
+        circle.classList.add('earth'); // 添加地球样式
+      } else {
+        circle.classList.remove('move', 'earth');
       }
     }
   });
