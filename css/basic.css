@@ -125,15 +125,13 @@ body {
 /* 页头样式 */
 .header {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     background-color: #2B2B2B;
     color: #fff;
     display: flex;
     justify-content: center;
-    /* 水平居中 */
     align-items: center;
-    /* 垂直居中 */
     z-index: 100;
 }
 
@@ -145,28 +143,32 @@ body {
     border: 2px solid white;
     border-radius: 50px;
     padding: 0px;
+    max-width: 100%;
+    overflow-x: auto; /* 允许在小屏幕上水平滚动 */
+    white-space: nowrap; /* 防止文本换行 */
 }
 
 .header-nav a {
     color: #fff;
     text-decoration: none;
     padding: 10px 30px;
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
     border-radius: 50px;
+    transition: background-color 0.3s ease;
 }
 
 .header-nav a:hover,
 .header-nav a.active {
     background-color: #00A651;
     color: white;
-    border-radius: 50px;
 }
 
 .logo {
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
     border-radius: 50px;
     display: flex;
     align-items: center;
+    flex-shrink: 0; /* 防止logo缩小 */
 }
 
 .logo img {
@@ -204,4 +206,46 @@ body {
     /* 背景从底部开始 */
     background-repeat: no-repeat;
     /* 不重复背景图 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header-nav {
+        padding: 5px;
+        justify-content: flex-start; /* 在小屏幕上左对齐 */
+    }
+
+    .header-nav a {
+        margin: 0 5px;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        margin: 0 10px;
+    }
+
+    .logo img {
+        max-height: 40px;
+    }
+
+    .logo b {
+        font-size: 1.2rem;
+    }
+}
+
+/* 更小屏幕的额外调整 */
+@media (max-width: 480px) {
+    .header-nav a {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .logo img {
+        max-height: 30px;
+    }
+
+    .logo b {
+        font-size: 1rem;
+    }
 }

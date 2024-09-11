@@ -13,17 +13,17 @@ class CustomHonor extends HTMLElement {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin: 6px 8px 6px 8px;
+            margin: var(--honor-detail-margin, 6px 8px 6px 8px);
           }
           .honor-level {
             color: #D6F0C6;
             font-family: 'Barlow-Black', sans-serif;
-            font-size: 2rem;
+            font-size: var(--honor-level-font-size, 2rem);
           }
           .honor-name {
             color:#7CC694;
             font-family: 'Barlow-Black', sans-serif;
-            font-size: 1rem;
+            font-size: var(--honor-name-font-size, 1rem);
           }
         </style>
         <div class="honor-detail">
@@ -49,14 +49,15 @@ class CustomIntern extends HTMLElement {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
+            margin: var(--intern-detail-margin, 10px 0);
           }
           .intern-detail img {
-            width: 20%;
+            width: var(--intern-company-pic-size, 5rem);
             height: auto;
-            margin: 10px;
+            margin-top: var(--intern-company-pic-gap, 10px);
           }
           .company-info {
-            width:75%;
+            width: 80%;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -64,12 +65,12 @@ class CustomIntern extends HTMLElement {
           .company-name {
             color: #D6F0C6;
             font-family: 'Barlow-Black', sans-serif;
-            font-size: 2rem;
+            font-size: var(--intern-company-font-size, 2rem);
           }
           .time-place {
             color: #7CC694;
             font-family: 'Barlow-Black', sans-serif;
-            font-size: 1rem;
+            font-size: var(--intern-time-font-size, 1rem);
           }
         </style>
         <div class="intern-detail">
@@ -96,7 +97,7 @@ class CustomEducation extends HTMLElement {
         .edu-detail {
             position: relative;
             padding-left: 52px;
-            margin-bottom: 30px;
+            margin-bottom: var(--edu-detail-margin, 30px);
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -114,12 +115,12 @@ class CustomEducation extends HTMLElement {
         }
         .edu-level {
             font-family: 'Barlow-Black', sans-serif;
-            font-size: 1.8rem;
+            font-size: var(--edu-level-font-size, 1.8rem);
             color: #D6F0C6;
         }
         .edu-description {
             font-family: 'Barlow-Black', sans-serif;
-            font-size: 1.3rem;
+            font-size: var(--edu-description-font-size, 1.3rem);
             color: #7CC694;
         }
         </style>
@@ -166,7 +167,7 @@ class CustomSkill extends HTMLElement {
         .skill-name {
             color: #FFFFFF;
             font-family: 'Barlow-Black', sans-serif;
-            font-size: 3.5rem;
+            font-size: var(--skill-name-font-size, 3.5rem);
             position: absolute;
             bottom: 0;
             right: 0;
@@ -192,7 +193,7 @@ class CustomSkill extends HTMLElement {
             color: #7CC694;
             opacity: 70%;
             font-family: 'Barlow-Black', sans-serif;
-            font-size: 1.5rem;
+            font-size: var(--skill-list-font-size, 1.5rem);
             margin-bottom: 5px; /* 设置列表项之间的垂直间距为 10 像素 */
         }
         </style>

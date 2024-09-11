@@ -5,78 +5,92 @@
     font-style: normal;
 }
 
-.img-container {
-    height: 100vh;
-    width: 30vw;
-    flex: 1;
+.home-content {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-}
-
-.img-container img {
+    justify-content: flex-end;
+    align-items: flex-start;
     width: 100%;
-    height: auto;
+    max-width: 1400px;
 }
 
-.text-container {
-    height: 100vh;
-    width: 70vw;
+/* .img-container {
+    flex: 1;
+    max-width: 40%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.text {
-    margin-top: 5rem;
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+} */
+
+.text-container {
+    flex: 1;
+    max-width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .name {
     font-family: 'Barlow-Black', sans-serif;
-    font-size: 8rem;
+    font-size: 8vw;
     color: #00A651;
+    margin-bottom: 1rem;
+    line-height: 1;
+    /* 减小行高 */
 }
 
 .major-container {
     font-family: 'Barlow-Black', sans-serif;
-    font-size: 4rem;
+    font-size: 5vw;
     color: #D6F0C6;
-    text-align: right;
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
-/* .SE {
+/* .email {
     font-family: 'Barlow-Black', sans-serif;
-    font-size: 3rem;
-    color: #D6F0C6;
-}
-
-.Direction {
-    font-family: 'Barlow-Black', sans-serif;
-    font-size: 2rem;
-    color: #7CC694;
-}
-
-.hobby-container {
-    display: flex;
-    align-items: flex-start;
-}
-
-.hobby {
-    font-family: 'Barlow-Black', sans-serif;
-    font-size: 2rem;
-    color: #A6A6A6;
-    margin-right: 50px;
+    font-size: 1.5vw;
+    color: #fff;
+    text-decoration: none;
 } */
 
-.email {
-    font-family: 'Barlow-Black', sans-serif;
-    font-size: 2rem;
-    color: #fff;
-    display: block;
-    /* 将邮箱地址设置为块级元素 */
+@media (max-width: 768px) {
+    .page#home {
+        align-items: center;
+        /* 居中对齐整个内容 */
+    }
+
+    .home-content {
+        justify-content: center;
+    }
+
+    .text-container {
+        max-width: 100%;
+        align-items: center;
+        /* 居中对齐文本容器内的元素 */
+        text-align: center;
+        /* 文本居中对齐 */
+    }
+
+    .name {
+        font-size: 13vw;
+        text-align: center;
+        /* 确保名字居中 */
+    }
+
+    .major-container {
+        font-size: 8vw;
+        text-align: center;
+        /* 确保专业描述居中 */
+    }
+
+    /* .email {
+        font-size: 3vw;
+        text-align: center; /* 确保邮箱居中 */
 }

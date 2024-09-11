@@ -1,61 +1,107 @@
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* 将容器分为 4 列 */
-    gap: 15px;
-    width: 85%;
-    height: 85vh;
+.bento-container {
+    display: flex;
+    height: 80%;
     padding-top: 10vh;
 }
 
-.gallery-item {
-    position: relative;
+.bento-nav {
+    width: 300px; /* 稍微增加导航栏宽度 */
+    padding: 30px;
+    background-color: #f5f5f5;
+    overflow-y: auto;
+    border-right: 1px solid #e0e0e0;
+}
+
+.bento-nav h3 {
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.bento-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bento-nav li {
+    margin-bottom: 20px;
+}
+
+.bento-nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.bento-nav a:hover {
+    color: #007bff;
+}
+
+.bento-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 增加最小宽度 */
+    gap: 30px;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.bento-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+.bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
 }
 
-.gallery-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    font-size: 0.9em;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.gallery-item:hover .caption {
-    opacity: 1;
-}
-
-/* 定义不同的大小 */
-.item-large {
+.bento-item.large {
     grid-column: span 2;
-    /* 占据 2 列 */
     grid-row: span 2;
-    /* 占据 2 行 */
 }
 
-.item-small {
-    grid-column: span 1;
-    /* 占据 1 列 */
-    grid-row: span 1;
-    /* 占据 1 行 */
+.bento-item img {
+    width: 100%;
+    height: 250px; /* 增加图片高度 */
+    object-fit: cover;
+}
+
+.bento-item h4 {
+    margin: 20px 25px 15px;
+    font-size: 1.3em;
+    color: #333;
+}
+
+.bento-item p {
+    margin: 0 25px 25px;
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (min-width: 1600px) {
+    .bento-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 1200px) {
+    .bento-container {
+        flex-direction: column;
+    }
+
+    .bento-nav {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .bento-grid {
+        height: calc(100vh - 250px); /* 调整高度以适应导航栏 */
+    }
 }

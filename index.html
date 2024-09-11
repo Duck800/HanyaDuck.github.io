@@ -35,24 +35,16 @@
 
     <div class="container">
         <div class="page" id="home">
-            <div class="img-container">
-                <img src="./public/img/Self-Pic.png" alt="Hanya">
-            </div>
-            <div class="text-container">
-                <div class="text">
-                    <b class="name">HANYA SUN</b>
+            <div class="home-content">
+                <!-- <div class="img-container">
+                    <img src="./public/img/Self-Pic.png" alt="Hanya">
+                </div> -->
+                <div class="text-container">
+                    <h1 class="name">HANYA SUN</h1>
                     <div class="major-container">
-                        Life is a
-                        <br>
-                        Worthwhile Trip
+                        Life is a<br>Worthwhile Trip
                     </div>
-                    <!-- <div style="text-align: right;">
-                        <a href="mailto:duck.hanya@outlook.com,duckshy@163.com"
-                            style="text-decoration: none; display: block;">
-                            <b class="email">duck.hanya@outlook.com</b>
-                            <b class="email">duckshy@163.com</b>
-                        </a>
-                    </div> -->
+                    <!-- <a href="mailto:duck.hanya@outlook.com" class="email">duck.hanya@outlook.com</a> -->
                 </div>
             </div>
         </div>
@@ -88,19 +80,19 @@
             </div>
 
             <div class="about-right">
-                <div class="upper-part">
-                    <div class="edu-container">
+                <div class="edu-container">
+                    <div class="edu-header">
                         <b class="edu-text">EDUCATION</b>
-                        <div class="edu-list">
-                            <edu-detail edu-level="Pre-university"
-                                edu-description="2009-2021 Nantong, Jiangsu, China"></edu-detail>
-                            <edu-detail edu-level="Bachelor: Tongji University"
-                                edu-description="2021-2025 Shanghai, China"></edu-detail>
-                        </div>
+                        <button class="download">
+                            Download CV
+                        </button>
                     </div>
-                    <button class="download">
-                        Download CV
-                    </button>
+                    <div class="edu-list">
+                        <edu-detail edu-level="Pre-university"
+                            edu-description="2009-2021 Nantong, Jiangsu, China"></edu-detail>
+                        <edu-detail edu-level="Bachelor: Tongji University"
+                            edu-description="2021-2025 Shanghai, China"></edu-detail>
+                    </div>
                 </div>
 
                 <div class="skill-container">
@@ -116,30 +108,31 @@
         </div>
 
         <div class="page" id="experience">
-            <div class="gallery">
-                <div class="gallery-item item-large">
-                    <img src="https://via.placeholder.com/400x300" alt="图片1">
-                    <div class="caption">图片1描述</div>
-                </div>
-                <div class="gallery-item item-small">
-                    <img src="https://via.placeholder.com/200x150" alt="图片2">
-                    <div class="caption">图片2描述</div>
-                </div>
-                <div class="gallery-item item-small">
-                    <img src="https://via.placeholder.com/200x300" alt="图片3">
-                    <div class="caption">图片3描述</div>
-                </div>
-                <div class="gallery-item item-large">
-                    <img src="https://via.placeholder.com/400x300" alt="图片4">
-                    <div class="caption">图片4描述</div>
-                </div>
-                <div class="gallery-item item-small">
-                    <img src="https://via.placeholder.com/250x200" alt="图片5">
-                    <div class="caption">图片5描述</div>
-                </div>
-                <div class="gallery-item item-small">
-                    <img src="https://via.placeholder.com/200x250" alt="图片6">
-                    <div class="caption">图片6描述</div>
+            <div class="bento-container">
+                <nav class="bento-nav">
+                    <h3>最近合集</h3>
+                    <ul>
+                        <li><a href="#collection1">2024年春季摄影集</a></li>
+                        <li><a href="#collection2">我的编程学习笔记</a></li>
+                        <li><a href="#collection3">2023年冬季旅行</a></li>
+                        <!-- 添加更多合集 -->
+                    </ul>
+                </nav>
+                <div class="bento-grid">
+                    <div class="bento-item large">
+                        <img src="path/to/image1.jpg" alt="春季风景">
+                        <h4>春日樱花</h4>
+                        <p>2024年4月拍摄于上海</p>
+                    </div>
+                    <div class="bento-item small">
+                        <h4>JavaScript基础</h4>
+                        <p>变量、函数和对象的概念总结</p>
+                    </div>
+                    <div class="bento-item small">
+                        <img src="path/to/image2.jpg" alt="冬季雪景">
+                        <h4>雪中古镇</h4>
+                    </div>
+                    <!-- 添加更多bento-item -->
                 </div>
             </div>
         </div>
