@@ -52,12 +52,12 @@ class CustomIntern extends HTMLElement {
             margin: var(--intern-detail-margin, 10px 0);
           }
           .intern-detail img {
-            width: var(--intern-company-pic-size, 5rem);
+            width: var(--intern-company-pic-size, 5.5rem);
             height: auto;
             margin-top: var(--intern-company-pic-gap, 10px);
           }
           .company-info {
-            width: 80%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
