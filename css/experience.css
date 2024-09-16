@@ -1,21 +1,72 @@
+@font-face {
+    font-family: 'Barlow-ExtraBlod';
+    src: url('../public/font/Barlow-ExtraBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Barlow-Black';
+    src: url('../public/font/Barlow-Black.ttf') format('truetype');
+    font-style: normal;
+}
+
 .bento-container {
     display: flex;
-    height: 80%;
-    padding-top: 10vh;
+    height: 80vh;
+    width: 80vw;
+    padding-top: 8vh;
 }
 
 .bento-nav {
-    width: 300px; /* 稍微增加导航栏宽度 */
-    padding: 30px;
-    background-color: #f5f5f5;
+    padding: 0rem 2rem 1rem 2rem;
+    background-color: #00A651;
+    color: #fff;
     overflow-y: auto;
-    border-right: 1px solid #e0e0e0;
+    position: relative;
+    border-radius: 15px;
+    margin-right: 2rem;
 }
 
-.bento-nav h3 {
-    font-size: 1.3em;
-    margin-bottom: 25px;
-    color: #333;
+.bento-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #2ecc71, #3498db);
+}
+
+.bento-content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.collection-title {
+    padding: 5px 5px 5px 20px;
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 1.6rem;
+}
+
+.bento-nav h1 {
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.bento-nav h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #7CC694;
 }
 
 .bento-nav ul {
@@ -24,64 +75,130 @@
 }
 
 .bento-nav li {
-    margin-bottom: 20px;
+    position: relative;
+    margin-bottom: 0.5rem;
 }
 
 .bento-nav a {
+    font-family: 'Barlow-Black', sans-serif;
+    color: #D6F0C6;
     text-decoration: none;
-    color: #555;
     font-size: 1.1em;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #00530A;
+    opacity: 50%;
+    transition: left 0.3s ease;
+    z-index: -1;
 }
 
 .bento-nav a:hover {
-    color: #007bff;
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.bento-nav a:hover::before {
+    left: 0;
+}
+
+.bento-nav li::before {
+    content: '▶';
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: #D6F0C6;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.bento-nav li:hover::before {
+    opacity: 1;
+    transform: translateY(-50%) translateX(3px);
 }
 
 .bento-grid {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 增加最小宽度 */
-    gap: 30px;
-    padding: 40px;
+    grid-template-columns: repeat(36, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 20px;
+    padding: 20px;
     overflow-y: auto;
 }
 
 .bento-item {
     background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .bento-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.bento-item.medium {
+    grid-column: span 12;
+    grid-row: span 2;
+    background-color: #D6F0C6;
+}
+
+.bento-item.square {
+    grid-column: span 6;
+    grid-row: span 2;
+    background-color: #000000;
+}
+
+.bento-item.long {
+    grid-column: span 24;
+    grid-row: span 2;
+    background-color: #000000;
 }
 
 .bento-item.large {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-column: span 15;
+    grid-row: span 3;
+    background-color: #FFFFFF;
 }
 
-.bento-item img {
-    width: 100%;
-    height: 250px; /* 增加图片高度 */
-    object-fit: cover;
+.bento-item.tall {
+    grid-column: span 6;
+    grid-row: span 5;
+    background-color: #D6F0C6;
 }
 
 .bento-item h4 {
-    margin: 20px 25px 15px;
-    font-size: 1.3em;
+    margin: 10px 0;
+    font-size: 1.2em;
     color: #333;
 }
 
 .bento-item p {
-    margin: 0 25px 25px;
-    font-size: 1em;
+    margin: 0;
+    font-size: 0.9em;
     color: #666;
-    line-height: 1.6;
 }
 
 @media (min-width: 1600px) {
@@ -93,6 +210,7 @@
 @media (max-width: 1200px) {
     .bento-container {
         flex-direction: column;
+        height: auto;
     }
 
     .bento-nav {
@@ -102,6 +220,40 @@
     }
 
     .bento-grid {
-        height: calc(100vh - 250px); /* 调整高度以适应导航栏 */
+        grid-template-columns: repeat(20, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .bento-item.tall {
+        grid-column: auto;
+        grid-row: span 5;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-item.medium,
+    .bento-item.square,
+    .bento-item.long,
+    .bento-item.large,
+    .bento-item.tall {
+        grid-column: span 1;
+    }
+
+    .bento-item.medium,
+    .bento-item.square,
+    .bento-item.long {
+        grid-row: span 2;
+    }
+
+    .bento-item.large {
+        grid-row: span 3;
+    }
+
+    .bento-item.tall {
+        grid-row: span 5;
     }
 }
