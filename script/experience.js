@@ -1,33 +1,59 @@
 // 定义每个集合的内容和标题
 const collections = {
     nantong: {
-        title: "Nantong, Jiangsu",
+        title: "Nantong",
         items: [
-            { type: 'medium', title: '南通风光', description: '美丽的江海之城' },
-            { type: 'medium', title: '狼山', description: '南通著名景点' },
-            { type: 'medium', title: '狼山', description: '南通著名景点' },
-            { type: 'square', title: '狼山', description: '南通著名景点' },
-            { type: 'long', title: '狼山', description: '南通著名景点' },
-            { type: 'tall', title: '狼山', description: '南通著名景点' },
-            { type: 'large', title: '狼山', description: '南通著名景点' },
-            { type: 'large', title: '狼山', description: '南通著名景点' },
+            { type: 'medium', title: 'Hao River', image: 'Nantong/HaoRiver.jpg' },
+            { type: 'medium', title: 'West Railway Station', image: 'Nantong/WestStation.jpg' },
+            { type: 'medium', title: 'Wolf Hill', image: 'Nantong/WolfHill.jpg' },
+            { type: 'square', title: 'Huoxiang Tea', image: 'Nantong/HuoxiangTea.jpg' },
+            { type: 'long', title: '潮平两岸阔', description: "The tide is high, and the shores stretch wide<br>A serene expanse where beauty does abide." },
+            { type: 'tall', title: 'Bamboo Backyard', image: 'Nantong/Bamboo.jpg' },
+            { type: 'large', title: 'Gate of Wolf Hill', image: 'Nantong/GateOfWolfHill.jpg' },
+            { type: 'large', title: 'Nantong Museum', image: 'Nantong/Museum.jpg' },
         ]
     },
     tongji: {
-        title: "同济大学",
+        title: "Tongji",
         items: [
-            { type: 'large', title: '同济大学', description: '百年学府' },
-            { type: 'square', title: '四平路校区', description: '主校区风貌' },
+            { type: 'medium', title: 'Hao River', image: 'Nantong/HaoRiver.jpg' },
+            { type: 'medium', title: 'West Railway Station', image: 'Nantong/WestStation.jpg' },
+            { type: 'medium', title: 'Wolf Hill', image: 'Nantong/WolfHill.jpg' },
+            { type: 'square', title: 'Huoxiang Tea', image: 'Nantong/HuoxiangTea.jpg' },
+            { type: 'long', title: '潮平两岸阔', description: "The tide is high, and the shores stretch wide<br>A serene expanse where beauty does abide." },
+            { type: 'tall', title: 'Bamboo Backyard', image: 'Nantong/Bamboo.jpg' },
+            { type: 'large', title: 'Gate of Wolf Hill', image: 'Nantong/GateOfWolfHill.jpg' },
+            { type: 'large', title: 'Nantong Museum', image: 'Nantong/Museum.jpg' },
         ]
     },
-    // 为其他集合添加内容...
 };
 
-function createBentoItem(item) {
+function createBentoItem(item, folder) {
+    if (!item.description && !item.image) {
+        // 如果只有标题，直接返回只包含标题的 div
+        return `
+            <div class="bento-item ${item.type}">
+                <b>${item.title}</b>
+            </div>
+        `;
+    }
+
+    const backgroundStyle = item.image
+        ? `style="background-image: url('./public/experience/${item.image}'); background-size: cover; background-position: center;"`
+        : '';
+
+    const content = item.description
+        ? `
+            <div class="bento-item-content">
+                <b>${item.title}</b>
+                <p>${item.description}</p>
+            </div>
+          `
+        : '';
+
     return `
-        <div class="bento-item ${item.type}">
-            <h4>${item.title}</h4>
-            <p>${item.description}</p>
+        <div class="bento-item ${item.type}" ${backgroundStyle}>
+            ${content}
         </div>
     `;
 }
@@ -40,7 +66,7 @@ function updateCollectionTitle(collectionName) {
 function updateBentoGrid(collectionName) {
     const bentoGrid = document.querySelector('.bento-grid');
     const collectionItems = collections[collectionName].items;
-    
+
     if (collectionItems) {
         bentoGrid.innerHTML = collectionItems.map(createBentoItem).join('');
     } else {
@@ -48,25 +74,44 @@ function updateBentoGrid(collectionName) {
     }
 
     updateCollectionTitle(collectionName);
+
+    // 更新激活状态
+    const navLinks = document.querySelectorAll('.bento-nav a');
+    navLinks.forEach(link => {
+        if (link.getAttribute('data-collection') === collectionName) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.bento-nav a');
-    
+    const folders = document.querySelectorAll('.bento-nav .folder-name');
+
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const collectionName = link.getAttribute('data-collection');
             updateBentoGrid(collectionName);
-            
-            // 更新活动链接样式
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
+        });
+    });
+
+    folders.forEach(folder => {
+        folder.addEventListener('click', () => {
+            folder.parentElement.classList.toggle('open');
         });
     });
 
     // 默认显示第一个集合
-    const firstCollectionName = navLinks[0].getAttribute('data-collection');
+    const firstLink = navLinks[0];
+    const firstCollectionName = firstLink.getAttribute('data-collection');
     updateBentoGrid(firstCollectionName);
-    navLinks[0].classList.add('active');
+
+    // 打开默认集合所在的文件夹
+    const defaultFolder = firstLink.closest('.folder');
+    if (defaultFolder) {
+        defaultFolder.classList.add('open');
+    }
 });

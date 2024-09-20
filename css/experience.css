@@ -10,6 +10,18 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Barlow-SemiBold';
+    src: url('../public/font/Barlow-SemiBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Shoujin';
+    src: url('../public/font/Shoujin.ttf') format('truetype');
+    font-style: normal;
+}
+
 .bento-container {
     display: flex;
     height: 80vh;
@@ -80,11 +92,11 @@
 }
 
 .bento-nav a {
-    font-family: 'Barlow-Black', sans-serif;
+    font-family: 'Barlow-SemiBold', sans-serif;
+    font-size: 1rem;
     color: #D6F0C6;
     text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
     display: block;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -105,16 +117,18 @@
     z-index: -1;
 }
 
-.bento-nav a:hover {
+.bento-nav a:hover,
+.bento-nav a.active {
     color: #ffffff;
     transform: translateX(5px);
 }
 
-.bento-nav a:hover::before {
+.bento-nav a:hover::before,
+.bento-nav a.active::before {
     left: 0;
 }
 
-.bento-nav li::before {
+.bento-nav li li::before {
     content: '▶';
     position: absolute;
     left: -1rem;
@@ -126,9 +140,44 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.bento-nav li:hover::before {
+.bento-nav li:hover::before,
+.bento-nav a.active+li::before {
     opacity: 1;
     transform: translateY(-50%) translateX(3px);
+}
+
+.bento-nav .folder {
+    padding-left: 1rem;
+}
+
+.bento-nav .folder-name {
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.bento-nav .folder-name::before {
+    content: '▶';
+    position: absolute;
+    left: -1rem;
+    transition: transform 0.3s ease;
+}
+
+.bento-nav .folder.open .folder-name::before {
+    transform: rotate(90deg);
+}
+
+.bento-nav .folder>ul {
+    display: none;
+    margin-left: 1rem;
+}
+
+.bento-nav .folder.open>ul {
+    display: block;
 }
 
 .bento-grid {
@@ -160,45 +209,54 @@
 }
 
 .bento-item.medium {
+    color: #666;
     grid-column: span 12;
     grid-row: span 2;
     background-color: #D6F0C6;
 }
 
 .bento-item.square {
+    color: white;
     grid-column: span 6;
     grid-row: span 2;
     background-color: #000000;
 }
 
 .bento-item.long {
+    color: white;
     grid-column: span 24;
     grid-row: span 2;
     background-color: #000000;
 }
 
 .bento-item.large {
+    color: #666;
     grid-column: span 15;
     grid-row: span 3;
     background-color: #FFFFFF;
 }
 
 .bento-item.tall {
+    color: #000000;
     grid-column: span 6;
     grid-row: span 5;
     background-color: #D6F0C6;
 }
 
-.bento-item h4 {
-    margin: 10px 0;
-    font-size: 1.2em;
-    color: #333;
+.bento-item.long .bento-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
-.bento-item p {
-    margin: 0;
-    font-size: 0.9em;
-    color: #666;
+.bento-item.long b {
+    font-size: 3rem;
+}
+
+.bento-item.long p {
+    font-size: 0.8rem;
 }
 
 @media (min-width: 1600px) {
