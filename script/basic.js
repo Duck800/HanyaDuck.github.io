@@ -1,121 +1,44 @@
-// 获取所有页面元素
+// 获取所有页面元素和导航链接
 const pages = document.querySelectorAll('.page');
-const circles = document.querySelectorAll('.circle-box div');
-// 获取所有导航链接元素
 const navLinks = document.querySelectorAll('.header-nav a');
 
-// 添加滚轮滑动事件监听
-let currentPage = 0;
-let isScrolling = false;
-
-window.addEventListener('wheel', (event) => {
-  if (isScrolling) return;
-  isScrolling = true;
-
-  if (event.deltaY > 0) {
-    // 向下滚动
-    if (currentPage < pages.length - 1) {
-      currentPage++;
-      scrollToPage(currentPage);
-      moveCircle(currentPage);
-    }
-  } else {
-    // 向上滚动
-    if (currentPage > 0) {
-      currentPage--;
-      scrollToPage(currentPage);
-      moveCircle(currentPage);
-    }
-  }
-
-  setTimeout(() => {
-    isScrolling = false;
-  }, 500);
-});
-
-// 添加导航链接点击事件监听
-navLinks.forEach((link, index) => {
-  link.addEventListener('click', () => {
-    currentPage = index;
-    scrollToPage(currentPage);
-    moveCircle(currentPage);
-  });
-});
-
-// 滚动到指定页面
-function scrollToPage(pageIndex) {
-  pages[pageIndex].scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+// 监听滚动事件
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.pageYOffset;
+  const windowHeight = window.innerHeight;
 
   // 更新导航栏高亮
-  navLinks.forEach((link, index) => {
-    if (index === pageIndex) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
+  updateNavHighlight(scrollPosition, windowHeight);
+});
 
-  // 设置背景图类
-  if (pageIndex === 3) {
-    document.querySelector('#contact').classList.add('background-scene');
-  } else {
-    document.querySelector('#contact').classList.remove('background-scene');
+// 更新导航栏高亮的函数
+function updateNavHighlight(scrollPosition, windowHeight) {
+  for (let i = pages.length - 1; i >= 0; i--) {
+    const page = pages[i];
+    const pageTop = page.offsetTop;
+    const pageHeight = page.offsetHeight;
+    
+    // 计算页面底部相对于文档顶部的位置
+    const pageBottom = pageTop + pageHeight;
+    
+    // 计算视窗底部相对于文档顶部的位置
+    const viewportBottom = scrollPosition + windowHeight;
+    
+    // 如果当前页面的一半以上在视窗中，就高亮对应的导航项
+    if (viewportBottom > pageTop + pageHeight / 2) {
+      navLinks.forEach((link) => link.classList.remove('active'));
+      navLinks[i].classList.add('active');
+      
+      // 设置背景图类
+      if (i === 3) {
+        document.querySelector('#contact').classList.add('background-scene');
+      } else {
+        document.querySelector('#contact').classList.remove('background-scene');
+      }
+      
+      break; // 找到匹配的页面后就退出循环
+    }
   }
-}
-
-// 创建一个新的 <style> 元素
-const styleSheet = document.createElement("style");
-document.head.appendChild(styleSheet);
-
-const radius = 250; // 圆半径
-
-let keyframes = '@keyframes orbit-moon {';
-
-for (let i = 0; i <= 100; i += 1) {
-  const angle = 90 + (i / 100) * 180; // 从 90° 到 270°
-  const x = radius * Math.cos((angle * Math.PI) / 180); // X 坐标
-  const y = radius * Math.sin((angle * Math.PI) / 180); // Y 坐标
-  keyframes += `${i}% { transform: translate(${x}px, ${-y}px) rotate(${angle}deg); }\n`; // y 值取反
-}
-
-keyframes += '}';
-
-// 将关键帧添加到新创建的样式表中
-styleSheet.innerHTML = keyframes;
-
-// 移动圆形
-function moveCircle(pageIndex) {
-  const circles = document.querySelectorAll('.circle');
-
-  circles.forEach((circle, index) => {
-    if (index === 0) { // 小圆
-      if (pageIndex === 0) {
-        circle.classList.remove('moveleft', 'movedown', 'moon');
-      } else if (pageIndex === 3) {
-        circle.classList.remove('moveleft', 'moon');
-        circle.classList.add('movedown');
-      } else if (pageIndex === 2) {
-        circle.classList.remove('moveleft', 'movedown');
-        circle.classList.add('moon'); // 添加月亮样式
-      } else {
-        circle.classList.remove('movedown', 'moon');
-        circle.classList.add('moveleft');
-      }
-    } else if (index === 1) { // 大圆
-      if (pageIndex === 3) {
-        circle.classList.add('move');
-        circle.classList.remove('earth');
-      } else if (pageIndex === 2) {
-        circle.classList.remove('move');
-        circle.classList.add('earth'); // 添加地球样式
-      } else {
-        circle.classList.remove('move', 'earth');
-      }
-    }
-  });
 }
 
 // 获取下载按钮元素

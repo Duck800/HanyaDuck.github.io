@@ -26,6 +26,19 @@ const collections = {
             { type: 'large', title: 'Nantong Museum', image: 'Nantong/Museum.jpg' },
         ]
     },
+    qinghai_gansu: {
+        title: "Qinghai-Gansu",
+        items: [
+            { type: 'medium', title: 'Hao River', image: 'Gansu&Qinghai/Jingfan.jpg' },
+            { type: 'medium', title: 'West Railway Station', image: 'Gansu&Qinghai/Priarie.jpg' },
+            { type: 'medium', title: 'Wolf Hill', image: 'Gansu&Qinghai/Lanshan.jpg' },
+            { type: 'square', title: 'Huoxiang Tea', image: 'Gansu&Qinghai/Chaka.jpg' },
+            { type: 'long', title: '人生是旷野 非轨道', description: "Life is wilderness, not bound by track<br>In freedom's dance, we shan't look back." },
+            { type: 'tall', title: 'Bamboo Backyard', image: 'Gansu&Qinghai/College.jpg' },
+            { type: 'large', title: 'Gate of Wolf Hill', image: 'Gansu&Qinghai/Horse.jpg' },
+            { type: 'large', title: 'Nantong Museum', image: 'Gansu&Qinghai/TaerTemple.jpg' },
+        ]
+    },
 };
 
 function createBentoItem(item, folder) {

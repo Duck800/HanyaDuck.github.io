@@ -39,10 +39,9 @@
 .name {
     font-family: 'Barlow-Black', sans-serif;
     font-size: 8vw;
-    color: #00A651;
+    color: #000;
     margin-bottom: 1rem;
     line-height: 1;
-    /* 减小行高 */
 }
 
 .major-container {

@@ -30,13 +30,19 @@
 }
 
 .bento-nav {
-    padding: 0rem 2rem 1rem 2rem;
     background-color: #00A651;
     color: #fff;
-    overflow-y: auto;
     position: relative;
+    padding: 10px 0px 15px 25px;
     border-radius: 15px;
     margin-right: 2rem;
+    max-height: 80vh;
+    width: 18vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* 防止滚动条出现在整个导航区域 */
+    overflow: hidden; /* 隐藏原生滚动条 */
 }
 
 .bento-nav::before {
@@ -65,10 +71,10 @@
 .bento-nav h1 {
     font-family: 'Barlow-Black', sans-serif;
     font-size: 2em;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
 }
 
 .bento-nav h1::after {
@@ -83,7 +89,52 @@
 
 .bento-nav ul {
     list-style-type: none;
-    padding: 0;
+    padding: 0 10px 0 0;
+    margin-top: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 10px;
+    height: calc(100% - 60px); /* 假设标题高度为60px，根据实际情况调整 */
+    overflow-y: scroll;
+    padding-right: 20px; /* 为自定义滚动条留出空间 */
+    margin-right: -20px; /* 抵消padding，使内容紧贴右边 */
+    position: relative;
+}
+
+/* 自定义滚动条样式 */
+.bento-nav ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+.bento-nav ul::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.bento-nav ul::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px; 
+    border: 1px solid rgba(0, 166, 81, 0.3);
+}
+
+.bento-nav ul::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* 对于 Firefox */
+.bento-nav ul {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+.bento-nav ul::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 6px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
 }
 
 .bento-nav li {
@@ -252,6 +303,7 @@
 }
 
 .bento-item.long b {
+    padding-top: 6px;
     font-size: 3rem;
 }
 

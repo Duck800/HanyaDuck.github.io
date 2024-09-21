@@ -4,121 +4,87 @@
     font-style: normal;
 }
 
-.circle-box {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    position: absolute;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.circle:first-child {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 30px solid #fff;
-    box-sizing: border-box;
-    position: absolute;
-    top: 25%;
-    left: 30%;
-    animation: move-y 3.5s linear infinite;
-    transition: top 0.5s ease, left 0.5s ease;
-}
-
-.circle:first-child.moveleft {
-    top: 15%;
-    left: 5%;
-}
-
-.circle:first-child.movedown {
-    top: 90%;
-    left: 95%;
-}
-
-.circle:last-child {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background: linear-gradient(136deg, #00A651 0%, #FFCD56 100%);
-    box-sizing: border-box;
-    position: absolute;
-    bottom: -3%;
-    right: -3%;
-    animation: move-y 5s linear infinite;
-    transition: all 0.5s ease;
-}
-
-.circle:last-child.move {
-    bottom: 72%;
-    right: 5%;
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(136deg, #FF8B43 0%, #86B54A 100%);
-}
-
-/* 设置动画参数实现动效循环 */
-@keyframes move-y {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-16px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.circle:last-child.earth {
-    width: 180px;
-    height: 180px;
-    background: linear-gradient(180deg, #00A651 0%, #50FFED 100%);
-    position: absolute;
-    bottom: 35%;
-    right: -3%;
-    animation: rotate-earth 10s linear infinite;
-}
-
-@keyframes rotate-earth {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.circle:first-child.moon {
-    width: 80px;
-    height: 80px;
-    background: #fff;
-    position: absolute;
-    top: 45%; 
-    left: 95%; 
-    animation: orbit-moon 25s linear infinite; /* 月亮绕地球旋转 */
-}
-
-.bg-filter {
+/* .bg-filter {
     width: 100%;
     height: 100%;
     background: transparent;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6px);
-    /* 用 blur 参数来模拟毛玻璃效果 */
     border-radius: 10px;
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     z-index: -1;
-}
+} */
 
-body {
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #2B2B2B;
+    height: auto; /* 允许内容超出视口高度 */
+    overflow-y: visible; /* 允许垂直滚动 */
+    -webkit-overflow-scrolling: touch; /* 为 iOS 设备添加惯性滚动 */
+}
+
+#home {
+    background-color: #00A651;
+    background-image: 
+        url('../public/img/home-top.png');
+    background-position: 
+        top center,
+        center;
+    background-repeat: 
+        no-repeat,
+        no-repeat;
+    background-size: 
+        100% auto,
+        cover;
+}
+
+#about, #experience, #contact {
+    background-color: #000;
+}
+
+#about {
+    background-image: 
+        url('../public/img/about-top.png');
+    background-position: 
+        top center,
+        center;
+    background-repeat: 
+        no-repeat,
+        no-repeat;
+    background-size: 
+        100% auto,
+        cover;
+}
+
+#experience {
+    background-color: #000;
+    /* background-image: 
+        url('../public/img/about-top.png');
+    background-position: 
+        top center,
+        center;
+    background-repeat: 
+        no-repeat,
+        no-repeat;
+    background-size: 
+        100% auto,
+        cover; */
+}
+
+#contact {
+    background-color: #000;
+    /* background-image: 
+        url('../public/img/about-top.png');
+    background-position: 
+        top center,
+        center;
+    background-repeat: 
+        no-repeat,
+        no-repeat;
+    background-size: 
+        100% auto,
+        cover; */
 }
 
 /* 页头样式 */
@@ -126,7 +92,7 @@ body {
     position: fixed;
     width: 100%;
     height: 10vh;
-    background-color: #2B2B2B;
+    background-color: transparent;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -135,7 +101,7 @@ body {
 }
 
 .header-nav {
-    background-color: #171717;
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,29 +148,26 @@ body {
 
 /* 页面内容样式 */
 .container {
-    height: 100vh;
     width: 100%;
-    overflow: hidden;
 }
 
 .page {
-    height: 100vh;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     color: #fff;
 }
 
 .page.background-scene {
     background-image: url('../public/img/SCENE.png');
     background-size: 100% auto;
-    /* 宽度 100%，高度自动调整 */
     background-position: bottom;
-    /* 背景从底部开始 */
     background-repeat: no-repeat;
-    /* 不重复背景图 */
 }
 
 /* 响应式设计 */
@@ -247,9 +210,4 @@ body {
     .logo b {
         font-size: 1rem;
     }
-}
-
-html, body {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* 为 iOS 设备添加惯性滚动 */
 }
