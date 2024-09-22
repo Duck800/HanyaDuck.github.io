@@ -11,34 +11,43 @@ window.addEventListener('scroll', () => {
   updateNavHighlight(scrollPosition, windowHeight);
 });
 
+// 页面加载后立即运行一次更新函数
+updateNavHighlight(window.pageYOffset, window.innerHeight);
+
 // 更新导航栏高亮的函数
 function updateNavHighlight(scrollPosition, windowHeight) {
-  for (let i = pages.length - 1; i >= 0; i--) {
-    const page = pages[i];
-    const pageTop = page.offsetTop;
-    const pageHeight = page.offsetHeight;
-    
-    // 计算页面底部相对于文档顶部的位置
-    const pageBottom = pageTop + pageHeight;
-    
-    // 计算视窗底部相对于文档顶部的位置
-    const viewportBottom = scrollPosition + windowHeight;
-    
-    // 如果当前页面的一半以上在视窗中，就高亮对应的导航项
-    if (viewportBottom > pageTop + pageHeight / 2) {
-      navLinks.forEach((link) => link.classList.remove('active'));
-      navLinks[i].classList.add('active');
+  let activeIndex = 0;
+  const documentHeight = document.documentElement.scrollHeight;
+
+  // 检查是否滚动到了文档底部
+  const isAtBottom = (window.innerHeight + window.scrollY) >= documentHeight - 1;
+
+  if (isAtBottom) {
+    // 如果在底部，激活最后一个导航项
+    activeIndex = pages.length - 1;
+  } else {
+    // 否则，遍历所有页面找到当前应该激活的页面
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+      const pageTop = page.offsetTop;
+      const pageHeight = page.offsetHeight;
       
-      // 设置背景图类
-      if (i === 3) {
-        document.querySelector('#contact').classList.add('background-scene');
-      } else {
-        document.querySelector('#contact').classList.remove('background-scene');
+      // 如果滚动位置在当前页面的上半部分，激活该页面的导航项
+      if (scrollPosition < pageTop + pageHeight / 2) {
+        activeIndex = i;
+        break;
       }
-      
-      break; // 找到匹配的页面后就退出循环
     }
   }
+
+  // 更新导航栏高亮
+  navLinks.forEach((link, index) => {
+    if (index === activeIndex) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
 }
 
 // 获取下载按钮元素

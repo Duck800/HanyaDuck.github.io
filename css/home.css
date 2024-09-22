@@ -52,13 +52,6 @@
     margin-bottom: 1rem;
 }
 
-/* .email {
-    font-family: 'Barlow-Black', sans-serif;
-    font-size: 1.5vw;
-    color: #fff;
-    text-decoration: none;
-} */
-
 @media (max-width: 768px) {
     .page#home {
         align-items: center;
@@ -88,8 +81,4 @@
         text-align: center;
         /* 确保专业描述居中 */
     }
-
-    /* .email {
-        font-size: 3vw;
-        text-align: center; /* 确保邮箱居中 */
 }
