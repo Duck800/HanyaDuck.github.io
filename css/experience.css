@@ -312,6 +312,30 @@
         padding: 5px 0px 5px 15px;
     }
 
+    .bento-nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .bento-nav li {
+        margin-bottom: 0.5rem;
+    }
+
+    .bento-nav .folder ul {
+        display: none;
+        grid-column: span 2;
+    }
+
+    .bento-nav .folder.open ul {
+        display: block;
+        grid-column: span 1;
+    }
+
+    .bento-nav .folder-name {
+        grid-column: span 1;
+    }
+
     .bento-content {
         width: 100%;
     }
@@ -414,6 +438,4 @@
     .bento-nav a.active::before {
         left: 0;
     }
-    
-    
 }

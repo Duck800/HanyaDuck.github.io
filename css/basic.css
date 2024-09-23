@@ -39,7 +39,7 @@ html, body {
         cover;
 }
 
-#about, #experience, #contact {
+#about, #experience, #more {
     background-color: #000;
 }
 
@@ -72,9 +72,9 @@ html, body {
         cover; */
 }
 
-#contact {
+#more {
     background-image: 
-        url('../public/img/contact-bottom.png');
+        url('../public/img/more-bottom.png');
     background-position: 
         bottom left,
         center;
@@ -187,7 +187,7 @@ html, body {
         font-size: 1.2rem;
     }
 
-    #contact {
+    #more {
         background-size: 
             112% 52%,
             cover;
