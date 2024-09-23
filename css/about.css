@@ -165,12 +165,13 @@
     .about-left,
     .about-right {
         width: 85%;
+        padding-top: 8vh;
         margin-right: 0px;
-        padding-top: 11vh;
     }
 
     .about-right {
         padding-top: 10px;
+        margin-left: 20px;
     }
 
     .honor-text,

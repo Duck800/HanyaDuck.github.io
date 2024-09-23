@@ -82,7 +82,7 @@ html, body {
         no-repeat,
         no-repeat;
     background-size: 
-        70% auto,
+        60% auto,
         cover;
 }
 
@@ -163,7 +163,7 @@ html, body {
 }
 
 /* 响应式设计 */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .header-nav {
         padding: 5px;
         justify-content: flex-start; /* 在小屏幕上左对齐 */
@@ -186,20 +186,10 @@ html, body {
     .logo b {
         font-size: 1.2rem;
     }
-}
 
-/* 更小屏幕的额外调整 */
-@media (max-width: 480px) {
-    .header-nav a {
-        padding: 6px 6px;
-        font-size: 0.8rem;
-    }
-
-    .logo img {
-        max-height: 30px;
-    }
-
-    .logo b {
-        font-size: 1rem;
-    }
+    #contact {
+        background-size: 
+            112% 52%,
+            cover;
+    }    
 }
