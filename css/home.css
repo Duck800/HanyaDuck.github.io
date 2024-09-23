@@ -1,0 +1,84 @@
+/* Home PAGE */
+@font-face {
+    font-family: 'Barlow-Black';
+    src: url('../public/font/Barlow-Black.ttf') format('truetype');
+    font-style: normal;
+}
+
+.home-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* .img-container {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+} */
+
+.text-container {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.name {
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 8vw;
+    color: #000;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.major-container {
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 5vw;
+    color: #D6F0C6;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .page#home {
+        align-items: center;
+        /* 居中对齐整个内容 */
+    }
+
+    .home-content {
+        justify-content: center;
+    }
+
+    .text-container {
+        max-width: 100%;
+        align-items: center;
+        /* 居中对齐文本容器内的元素 */
+        text-align: center;
+        /* 文本居中对齐 */
+    }
+
+    .name {
+        font-size: 13vw;
+        text-align: center;
+        /* 确保名字居中 */
+    }
+
+    .major-container {
+        font-size: 8vw;
+        text-align: center;
+        /* 确保专业描述居中 */
+    }
+}

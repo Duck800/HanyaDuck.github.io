@@ -1,0 +1,218 @@
+/* About PAGE */
+@font-face {
+    font-family: 'Barlow-Black';
+    src: url('../public/font/Barlow-Black.ttf') format('truetype');
+    font-style: normal;
+}
+
+.about-left,
+.about-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10vh;
+}
+
+.about-left {
+    width: 30%;
+    margin-right: 5%;
+}
+
+.about-right {
+    width: 40%;
+    margin-left: 5%;
+}
+
+:root {
+    --honor-level-font-size: 2rem;
+    --honor-name-font-size: 1rem;
+    --intern-company-font-size: 2rem;
+    --intern-time-font-size: 1rem;
+    --edu-level-font-size: 1.8rem;
+    --edu-description-font-size: 1.3rem;
+    --skill-name-font-size: 3.5rem;
+    --skill-list-font-size: 1.5rem;
+
+    --honor-detail-margin: 6px 8px 6px 8px;
+    --intern-detail-margin: 10px 0;
+    --edu-detail-margin: 30px;
+}
+
+.honor-container {
+    background-color: #00A651;
+    border-radius: 2rem;
+    padding: 25px 35px 25px 35px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+}
+
+.honor-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.honor-container img {
+    width: 4rem;
+    height: auto;
+    margin-right: 10px;
+}
+
+.honor-text,
+.intern-text,
+.edu-text,
+.skill-text {
+    font-family: 'Barlow-Black', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.honor-text {
+    color: #fff;
+}
+
+.intern-text,
+.edu-text,
+.skill-text {
+    color: #00A651;
+}
+
+.intern-container {
+    margin-top: 20px;
+}
+
+.upper-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.edu-container {
+    width: 100%;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edu-text {
+    margin: 0;
+}
+
+.edu-list {
+    list-style-type: none;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+.download {
+    background-color: #00A651;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Barlow-Black', sans-serif;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.skill-container {
+    flex-grow: 1;
+}
+
+.skill-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skill-display skill-detail {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 120px;
+}
+
+@media (max-width: 1200px) {
+    #about {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    :root {
+        --honor-level-font-size: 1rem;
+        --honor-name-font-size: 0.6rem;
+        --intern-company-font-size: 1.4rem;
+        --intern-time-font-size: 0.8rem;
+        --intern-company-pic-size: 5rem;
+        --edu-level-font-size: 1.2rem;
+        --edu-description-font-size: 0.8rem;
+        --skill-name-font-size: 2.5rem;
+        --skill-list-font-size: 1rem;
+
+        --honor-detail-margin: 1px 0px 1px 0px;
+        --intern-company-pic-gap: 4px;
+        --intern-detail-margin: 6px 0;
+        --edu-detail-margin: 20px;
+    }
+
+    .about-left,
+    .about-right {
+        width: 85%;
+        margin-right: 0px;
+        padding-top: 11vh;
+    }
+
+    .about-right {
+        padding-top: 10px;
+    }
+
+    .honor-text,
+    .intern-text,
+    .edu-text,
+    .skill-text {
+        font-size: 1.5rem;
+    }
+
+    .honor-container {
+        padding: 15px 30px 15px 30px;
+        margin-bottom: 0px;
+    }
+
+    .honor-logo {
+        margin-bottom: 5px;
+    }
+
+    .honor-container img {
+        width: 1.8rem;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .intern-container {
+        padding: 0px 10px 0px 10px;
+    }
+
+    .download {
+        font-size: 0.8rem;
+    }
+
+    .edu-header {
+        align-items: flex-start;
+        padding-right: 20px;
+    }
+
+    .edu-list {
+        padding-left: 0px;
+    }
+
+    .skill-container {
+        padding-right: 20px;
+    }
+}
